@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:rotationX="0">
+    //xmlns:android="http://schemas.android.com/apk/res/android:"android"라는 변수에
+    "http://schemas.android.com/apk/res/android" 위치에 있는 android 라이브러리를 지정하였고,id 속성을 가져와서 지정
+    LinearLayout android:id> /LinearLayout>을 호출하는 대신 사용
+//match_partent : 크기에 상관없이 핸드폰 크기에 맞추어서 화면 전체가 꽉 참
+//#FFFFFF : 흰 색
+// rotationX : 회전 -> 배경 제외가 회전
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="65dp"
+        android:text="회원가입"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/join_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+    //@+id : 새로 추가(+)하는 리소스 아이디 (객체개념)
+    //wrap_content : 폭과 높이가 글자가 꼭 들어갈 정도로 설정
+    //marginBottom : 바깥 여백
+    // constraintBottom_toTopOf : 현재 뷰 아래쪽을 (=)뷰의 위에 맞추는 설정
+    23 : 회원가입 밑부분을 이름 위에 위치
+    24 : 회원가입 끝(오른쪽)을 끝으로 배치
+    25 : 회원가입 시작(왼쪽)을 시작으로 배치
+
+    <EditText
+        android:id="@+id/join_name"
+        android:layout_width="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="이름"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/join_number"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/textView" />
+        //ems : 폰트
+
+    <EditText
+        android:id="@+id/join_number"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="24dp"
+        android:ems="10"
+        android:hint="휴대폰 번호"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/join_password"
+        app:layout_constraintEnd_toStartOf="@+id/check_button"
+        app:layout_constraintStart_toStartOf="@+id/join_name" />
+
+    <EditText
+        android:id="@+id/join_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:ems="10"
+        android:hint="비밀번호"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/join_pwck"
+        app:layout_constraintStart_toStartOf="@+id/join_number" />
+
+    <EditText
+        android:id="@+id/join_pwck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="267dp"
+        android:ems="10"
+        android:hint="비밀번호 확인"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/join_password" />
+
+    <Button
+        android:id="@+id/check_button"
+        android:layout_width="66dp"
+        android:layout_height="54dp"
+        android:layout_marginEnd="97dp"
+        android:text="확인"
+        app:layout_constraintBaseline_toBaselineOf="@+id/join_number"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/join_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="96dp"
+        android:text="가입"
+        app:layout_constraintBaseline_toBaselineOf="@+id/delete"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <Button
+        android:id="@+id/delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="71dp"
+        android:text="취소"
+        app:layout_constraintEnd_toEndOf="@+id/join_pwck"
+        app:layout_constraintStart_toEndOf="@+id/join_button"
+        app:layout_constraintTop_toBottomOf="@+id/join_pwck" />
+</androidx.constraintlayout.widget.ConstraintLayout>
